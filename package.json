@@ -15,11 +15,11 @@
     "test": "npm run contracts:test:js && npm run contracts:test:foundry"
   },
   "dependencies": {
-    "ethers": "^6.15.0",
-    "ganache": "^7.9.2",
-    "solc": "^0.8.34"
+    "ethers": "6.16.0",
+    "ganache": "7.9.2",
+    "solc": "0.8.34"
   },
   "devDependencies": {
-    "@openzeppelin/contracts": "^5.6.1"
+    "@openzeppelin/contracts": "5.6.1"
   }
 }
