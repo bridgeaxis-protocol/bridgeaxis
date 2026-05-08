@@ -1,0 +1,10 @@
+node_modules/
+artifacts/contracts/
+cache/
+out/
+lib/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store

@@ -1,0 +1,45 @@
+name: Protocol CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  aiusd-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Setup Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: stable
+
+      - name: Install Forge Std
+        run: forge install foundry-rs/forge-std --no-git
+
+      - name: Compile Contracts
+        run: npm run contracts:compile
+
+      - name: JS Contract Tests
+        run: npm run contracts:test:js
+
+      - name: Foundry Contract Suite
+        run: npm run contracts:test:foundry
+
+      - name: AIUSD Audit Report
+        run: npm run contracts:audit:aiusd

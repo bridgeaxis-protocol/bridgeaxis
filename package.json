@@ -1,0 +1,25 @@
+{
+  "name": "bridgeaxis",
+  "version": "1.0.0",
+  "description": "Public audit package for the BridgeAxis AIUSD contract system.",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bridgeaxis-protocol/bridgeaxis.git"
+  },
+  "scripts": {
+    "contracts:compile": "node scripts/compile-contracts.mjs",
+    "contracts:test:js": "npm run contracts:compile && node --test tests/contracts/**/*.test.mjs",
+    "contracts:test:foundry": "forge test",
+    "contracts:audit:aiusd": "node scripts/aiusd-audit-package.mjs",
+    "test": "npm run contracts:test:js && npm run contracts:test:foundry"
+  },
+  "dependencies": {
+    "ethers": "^6.15.0",
+    "ganache": "^7.9.2",
+    "solc": "^0.8.34"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^5.6.1"
+  }
+}

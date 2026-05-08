@@ -1,0 +1,11 @@
+{
+  "totalTests": 72,
+  "unitTests": 32,
+  "integrationTests": 6,
+  "securityTests": 8,
+  "fuzzTests": 22,
+  "invariantTests": 4,
+  "suiteFiles": 8,
+  "criticalPaths": 13,
+  "criticalPathsCovered": 13
+}
