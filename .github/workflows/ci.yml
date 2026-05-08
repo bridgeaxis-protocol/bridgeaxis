@@ -22,7 +22,7 @@ jobs:
           cache: npm
 
       - name: Install
-        run: npm ci
+        run: npm ci --omit=optional
 
       - name: Setup Foundry
         uses: foundry-rs/foundry-toolchain@v1
